@@ -14,7 +14,7 @@ export class LoginPage {
 
   loading: any;
   loginData = { username: '', password: '', client_id: 1 };
-    regData = {email:'',password:'', client_id: 1,firebase_uid:'' };
+  regData = { email: '', password: '', client_id: 1, firebase_uid: '' };
   data: any;
   constructor(public navCtrl: NavController,
     public authService: AuthService,
@@ -22,7 +22,7 @@ export class LoginPage {
     private toastCtrl: ToastController,
     public auth: AuthProvider,
     public local: Storage,
-    public userProvider:UserProvider
+    public userProvider: UserProvider
   ) { }
 
   doLogin() {
@@ -81,30 +81,30 @@ export class LoginPage {
   }
 
   //registration progcess
-   doSignup() {
+  doSignup() {
     this.showLoader();
     this.authService.register(this.regData).then((result) => {
       this.loading.dismiss();
       this.presentToast("Success! Your registration is completed.");
-     // this.navCtrl.pop();
+      // this.navCtrl.pop();
     }, (err) => {
       this.loading.dismiss();
       this.presentToast(err);
     });
   }
-    
-    createAccount() {
-        let credentials = this.regData;
-        this.auth.createAccount(this.regData.email,this.regData.password)
-        .then((data) => {
-           this.local.set('uid', data.uid);
-           this
-           .regData.firebase_uid=data.uid;
-           this.userProvider.createUser(credentials, data.uid);
-           this.doSignup();
-        }, (error) => {
-           // let alert = this.util.doAlert("Error",error.message,"Ok");
-            //alert.present();
-        });
-    };
+
+  createAccount() {
+    let credentials = this.regData;
+    this.auth.createAccount(this.regData.email, this.regData.password)
+      .then((data) => {
+        this.local.set('uid', data.uid);
+        this
+          .regData.firebase_uid = data.uid;
+        this.userProvider.createUser(credentials, data.uid);
+        this.doSignup();
+      }, (error) => {
+        // let alert = this.util.doAlert("Error",error.message,"Ok");
+        //alert.present();
+      });
+  };
 }
