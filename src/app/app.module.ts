@@ -3,7 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AngularFireDatabase} from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
@@ -39,13 +39,13 @@ export const firebaseConfig = {
   authDomain: "donationwebapp.firebaseapp.com",
   databaseURL: "https://donationwebapp.firebaseio.com",
   storageBucket: "donationwebapp.appspot.com",
-   messagingSenderId: "706102616999"
+  messagingSenderId: "706102616999"
 };
 
 
 @NgModule({
   declarations: [
-   MyApp,
+    MyApp,
     HomePage,
     ListPage,
     LoginPage,
