@@ -59,7 +59,6 @@ export class LoginPage {
   }
   conditionalChaining(value) {
     if (value.success) {
-      debugger;
       this.data = value;
       localStorage.setItem('token', this.data.token);
       localStorage.setItem('user_id', this.data.user_id);
@@ -71,7 +70,6 @@ export class LoginPage {
   }
 
   signin() {
-    debugger;
     this.auth.signin(this.data.email, this.loginData.password).then(this.signInChaining.bind(this));
   };
   signInChaining(value) {
