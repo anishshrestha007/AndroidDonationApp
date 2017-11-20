@@ -8,21 +8,20 @@ import { ChatViewPage } from "../chat-view/chat-view";
     templateUrl: 'inbox.html'
 })
 export class InboxPage {
-    users:FirebaseListObservable<any[]>;
-    uid:string;
-    constructor(public nav: NavController, public userProvider: UserProvider) {}
-      ngOnInit(): void {
-       this.userProvider
-      .getUid()
-      .then(this.assignDonnarType.bind(this));
-  }
+    users: FirebaseListObservable<any[]>;
+    uid: string;
+    constructor(public nav: NavController, public userProvider: UserProvider) { }
+    ngOnInit(): void {
+        this.userProvider
+            .getUid()
+            .then(this.assignDonnarType.bind(this));
+    }
     assignDonnarType(value) {
-           this.uid=value;
-       this.users=  this.userProvider.getAllUsers();
-       debugger;
-  }
+        this.uid = value;
+        this.users = this.userProvider.getAllUsers();
+    }
     openChat(key) {
-        let param = {uid: this.uid, interlocutor: key};
-        this.nav.push(ChatViewPage,param);
+        let param = { uid: this.uid, interlocutor: key };
+        this.nav.push(ChatViewPage, param);
     }
 }

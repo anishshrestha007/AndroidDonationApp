@@ -17,7 +17,7 @@ export class DonationDetail {
   public donnar_types: any[];
   donationData = { client_id: 1 };
   editData: any;
-  uid:string;
+  uid: string;
   constructor(
     public platform: Platform,
     public params: NavParams,
@@ -28,7 +28,7 @@ export class DonationDetail {
     public navCtrl: NavController,
     public http: Http,
     public modelCtrl: ModalController,
-    public userProvider:UserProvider
+    public userProvider: UserProvider
   ) {
     this.donationData = params.data;
   }
@@ -45,12 +45,12 @@ export class DonationDetail {
   ngOnInit(): void {
     this.getDonnarType();
     this.getDonationType();
-     this.userProvider
+    this.userProvider
       .getUid()
       .then(this.assignUid.bind(this));
   }
-   assignUid(value) {
-           this.uid=value;
+  assignUid(value) {
+    this.uid = value;
   }
   getDonationType(): void {
     this.donationService
@@ -95,11 +95,11 @@ export class DonationDetail {
   }
   onRequestClick(donation): void {
     var requestDonationData = {
-      firebase_uid:donation.firebase_uid,
-      uid:this.uid,
-      description:donation.description,
-      receiver_id:donation.created_by,
-      donation_id:donation.id
+      firebase_uid: donation.firebase_uid,
+      uid: this.uid,
+      description: donation.description,
+      receiver_id: donation.created_by,
+      donation_id: donation.id
     };
     let modal = this.modelCtrl.create(RequestDonation, requestDonationData
     );

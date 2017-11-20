@@ -21,16 +21,16 @@
       <ion-input [hidden]="1===1" [(ngModel)]="donationData.id" name="id" type="text"></ion-input>
     </ion-item>
     <ion-item>
-    <ion-label floating>Donation Type</ion-label>
-         <ion-select [(ngModel)]="donationData.donation_type_id" name="donation_type_id">
-             <ion-option  value="{{d.id}}" *ngFor="let d of donation_types" ngDefaultControl>{{d.name_np}} </ion-option>
-         </ion-select>
+      <ion-label floating>Donation Type</ion-label>
+      <ion-select [(ngModel)]="donationData.donation_type_id" name="donation_type_id">
+        <ion-option value="{{d.id}}" *ngFor="let d of donation_types" ngDefaultControl>{{d.name_np}} </ion-option>
+      </ion-select>
     </ion-item>
-      <ion-item>
-    <ion-label floating>Donnar Type</ion-label>
-         <ion-select [(ngModel)]="donationData.donnar_type_id" name="donnar_type_id">
-             <ion-option  value="{{donnar.id}}" *ngFor="let donnar of donnar_types" ngDefaultControl>{{donnar.name_np}} </ion-option>
-         </ion-select>
+    <ion-item>
+      <ion-label floating>Donnar Type</ion-label>
+      <ion-select [(ngModel)]="donationData.donnar_type_id" name="donnar_type_id">
+        <ion-option value="{{donnar.id}}" *ngFor="let donnar of donnar_types" ngDefaultControl>{{donnar.name_np}} </ion-option>
+      </ion-select>
     </ion-item>
     <ion-item>
       <ion-label floating>Food Description</ion-label>

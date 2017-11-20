@@ -39,13 +39,13 @@
         <!--<button small ion-button icon-left item-end color="secondary" (click)="onRequestClick()">
             <ion-icon name="eye"></ion-icon>
      </button>-->
-             <ion-avatar item-right>
+        <ion-avatar item-right>
           <img src="assets/safal.jpg">
         </ion-avatar>
 
       </ion-item>
     </ion-list>
-    <ion-list *ngSwitchCase="'Event'" >
+    <ion-list *ngSwitchCase="'Event'">
       <ion-item *ngFor="let event of events" (click)="onSelectEvent(event)">
         <ion-row>
           <ion-col col-5>
@@ -99,12 +99,18 @@
 <ion-footer>
   <ion-content>
     <ion-fab center bottom>
-      <button ion-fab color="plus-sign"><ion-icon name="add"></ion-icon></button>
+      <button ion-fab color="plus-sign">
+        <ion-icon name="add"></ion-icon>
+      </button>
       <ion-fab-list side="left">
-        <button ion-fab color="primary" (click)="openAddForm()"><b>D</b></button>
+        <button ion-fab color="primary" (click)="openAddForm()">
+          <b>D</b>
+        </button>
       </ion-fab-list>
       <ion-fab-list side="right">
-        <button ion-fab color="danger" (click)="openEventAddForm()"><b>E</b></button>
+        <button ion-fab color="danger" (click)="openEventAddForm()">
+          <b>E</b>
+        </button>
       </ion-fab-list>
     </ion-fab>
   </ion-content>

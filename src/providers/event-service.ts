@@ -12,7 +12,7 @@ export class EventService {
       headers.append('Content-Type', 'application/json');
       headers.append('token', localStorage.getItem("token"));
       headers.append('user_id', localStorage.getItem("user_id"));
-      this.http.post(AppSettings.api_endpoint+'Event', JSON.stringify(data), { headers: headers })
+      this.http.post(AppSettings.api_endpoint + 'Event', JSON.stringify(data), { headers: headers })
         .subscribe(res => {
           resolve(res.json());
         }, (err) => {
@@ -32,7 +32,7 @@ export class EventService {
         search: params,
         headers: headers
       });
-      return this.http.get(AppSettings.api_endpoint+'Event', options)
+      return this.http.get(AppSettings.api_endpoint + 'Event', options)
         .subscribe(res => {
           resolve(res.json());
         }, (err) => {

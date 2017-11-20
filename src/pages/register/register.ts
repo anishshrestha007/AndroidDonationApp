@@ -11,16 +11,16 @@ import { UserProvider } from '../../providers/user-provider/user-provider';
 export class RegisterPage {
 
   loading: any;
-  regData = {email:'',password:'', client_id: 1,firebase_uid:'' };
+  regData = { email: '', password: '', client_id: 1, firebase_uid: '' };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, 
-  public authService: AuthService, 
-  public loadingCtrl: LoadingController,
-   private toastCtrl: ToastController,
-       public auth: AuthProvider,
-       public storage:Storage,
-          public userProvider: UserProvider,
-         ) { }
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public authService: AuthService,
+    public loadingCtrl: LoadingController,
+    private toastCtrl: ToastController,
+    public auth: AuthProvider,
+    public storage: Storage,
+    public userProvider: UserProvider,
+  ) { }
 
   doSignup() {
     this.showLoader();
@@ -33,21 +33,21 @@ export class RegisterPage {
       this.presentToast(err);
     });
   }
-    
-    createAccount() {
-        let credentials = this.regData;
-        this.auth.createAccount(this.regData.email,this.regData.password)
-        .then((data) => {
-           this.storage.set('uid', data.uid);
-           this
-           .regData.firebase_uid=data.uid;
-           this.userProvider.createUser(credentials, data.uid);
-           this.doSignup();
-        }, (error) => {
-           // let alert = this.util.doAlert("Error",error.message,"Ok");
-            //alert.present();
-        });
-    };
+
+  createAccount() {
+    let credentials = this.regData;
+    this.auth.createAccount(this.regData.email, this.regData.password)
+      .then((data) => {
+        this.storage.set('uid', data.uid);
+        this
+          .regData.firebase_uid = data.uid;
+        this.userProvider.createUser(credentials, data.uid);
+        this.doSignup();
+      }, (error) => {
+        // let alert = this.util.doAlert("Error",error.message,"Ok");
+        //alert.present();
+      });
+  };
   showLoader() {
     this.loading = this.loadingCtrl.create({
       content: 'Registering...'

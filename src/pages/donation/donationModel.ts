@@ -11,8 +11,8 @@ export class donationModel {
 	created_by: number;
 	donation_type_id: number;
 	donnar_type_id: number;
-	full_name:string;
-    contact_number:string;
-	email:string;
-	firebase_uid:string;
+	full_name: string;
+	contact_number: string;
+	email: string;
+	firebase_uid: string;
 }

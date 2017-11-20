@@ -8,37 +8,39 @@
 
 
 <ion-content padding>
-    <button ion-button block (click)="openAddForm()" color="primary" id="btn-add-event">
+  <button ion-button block (click)="openAddForm()" color="primary" id="btn-add-event">
     Add New
   </button>
   <hr>
-<ion-list *ngFor="let dnrs of events">
-    <ion-item-sliding >
-    <ion-item class="item">
-      <ion-row class="row">
-        <div style="float:left;"></div>
-           <ion-thumbnail item-start>
-        <img src="assets/img/donation1.png">
-      </ion-thumbnail>
-        <div style="float:right;">
-           <p><b>{{dnrs.description}}</b></p>
-             <p>{{dnrs.address}}</p>
-        </div>
-      
-     
- </ion-row>           
-    </ion-item>
-    <ion-item-options side="right">
-      <button ion-button color="primary">
-        <ion-icon name="text"></ion-icon>
-        Request Details
-      </button>
-      <button ion-button color="secondary">
-        <ion-icon name="call"></ion-icon>
-        Edit
-      </button>
-    </ion-item-options>
-  </ion-item-sliding>
+  <ion-list *ngFor="let dnrs of events">
+    <ion-item-sliding>
+      <ion-item class="item">
+        <ion-row class="row">
+          <div style="float:left;"></div>
+          <ion-thumbnail item-start>
+            <img src="assets/img/donation1.png">
+          </ion-thumbnail>
+          <div style="float:right;">
+            <p>
+              <b>{{dnrs.description}}</b>
+            </p>
+            <p>{{dnrs.address}}</p>
+          </div>
 
-</ion-list>
+
+        </ion-row>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="primary">
+          <ion-icon name="text"></ion-icon>
+          Request Details
+        </button>
+        <button ion-button color="secondary">
+          <ion-icon name="call"></ion-icon>
+          Edit
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
 </ion-content>

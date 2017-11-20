@@ -16,7 +16,7 @@
 
 <ion-content padding>
   <form>
-      <ion-item>
+    <ion-item>
       <ion-label floating>FireBase UID</ion-label>
       <ion-input class="item-disabled" [(ngModel)]="donationData.firebase_uid" name="firebase_uid" type="text"></ion-input>
     </ion-item>
@@ -65,7 +65,9 @@
       <ion-datetime class="item-disabled" displayFormat="MM/DD/YYYY" [(ngModel)]="donationData.expiration_datetime" name="expiration_datetime"></ion-datetime>
     </ion-item>
   </form>
-    <ion-fab top right edge>
-      <button ion-fab color="danger" (click)="onRequestClick(donationData)"><label>Request</label></button>
-    </ion-fab>
+  <ion-fab top right edge>
+    <button ion-fab color="danger" (click)="onRequestClick(donationData)">
+      <label>Request</label>
+    </button>
+  </ion-fab>
 </ion-content>

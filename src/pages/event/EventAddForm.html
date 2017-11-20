@@ -19,19 +19,19 @@
   <form (submit)="postEvent()">
     <ion-item>
       <ion-label floating>Organizer Name Description</ion-label>
-      <ion-input [ngClass] = "{'item-disabled' : formMode}" [(ngModel)]="eventData.organizer_name" name="organizer_name" type="text"></ion-input>
+      <ion-input [ngClass]="{'item-disabled' : formMode}" [(ngModel)]="eventData.organizer_name" name="organizer_name" type="text"></ion-input>
     </ion-item>
     <ion-item>
-    <ion-label floating>Organization Type</ion-label>
-    <ion-select [(ngModel)]="eventData.org_type" name="org_type">
-      <ion-option value="{{o.id}}" *ngFor="let o of org_type" ngDefaultControl>{{o.full_name}} </ion-option>
-    </ion-select>
+      <ion-label floating>Organization Type</ion-label>
+      <ion-select [(ngModel)]="eventData.org_type" name="org_type">
+        <ion-option value="{{o.id}}" *ngFor="let o of org_type" ngDefaultControl>{{o.full_name}} </ion-option>
+      </ion-select>
     </ion-item>
-      <ion-item>
-    <ion-label floating>Event Type</ion-label>
-    <ion-select [(ngModel)]="eventData.event_type_id" name="event_type_id">
-      <ion-option value="{{e.id}}" *ngFor="let e of event_type" ngDefaultControl>{{e.name_np}} </ion-option>
-    </ion-select>
+    <ion-item>
+      <ion-label floating>Event Type</ion-label>
+      <ion-select [(ngModel)]="eventData.event_type_id" name="event_type_id">
+        <ion-option value="{{e.id}}" *ngFor="let e of event_type" ngDefaultControl>{{e.name_np}} </ion-option>
+      </ion-select>
     </ion-item>
     <ion-item>
       <ion-label floating>Event Location</ion-label>
@@ -39,19 +39,19 @@
     </ion-item>
     <ion-item>
       <ion-label floating>Contact Person</ion-label>
-         <ion-input [(ngModel)]="eventData.contact_person" name="contact_person" type="text"></ion-input>
+      <ion-input [(ngModel)]="eventData.contact_person" name="contact_person" type="text"></ion-input>
     </ion-item>
-     <ion-item>
+    <ion-item>
       <ion-label floating>Contact Number</ion-label>
-         <ion-input [(ngModel)]="eventData.contact_number" name="contact_number" type="text"></ion-input>
+      <ion-input [(ngModel)]="eventData.contact_number" name="contact_number" type="text"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label floating>Host Date</ion-label>
       <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="eventData.hosted_date" name="hosted_date"></ion-datetime>
     </ion-item>
-       <ion-item>
+    <ion-item>
       <ion-label floating>Start Time</ion-label>
-       <ion-input [(ngModel)]="eventData.hosted_time" name="hosted_time" type="text"></ion-input>
+      <ion-input [(ngModel)]="eventData.hosted_time" name="hosted_time" type="text"></ion-input>
     </ion-item>
     <button ion-button block type="submit">
       Save

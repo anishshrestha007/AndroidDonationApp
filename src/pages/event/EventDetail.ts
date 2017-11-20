@@ -14,8 +14,8 @@ export class MyEvents {
   item;
   loading: any;
   data: any;
-event: EventModel[] = null;
-  constructor( public navCtrl: NavController, private toastCtrl: ToastController, params: NavParams, public http: Http, public modalCtrl: ModalController) {
+  event: EventModel[] = null;
+  constructor(public navCtrl: NavController, private toastCtrl: ToastController, params: NavParams, public http: Http, public modalCtrl: ModalController) {
     this.item = params.data.item;
   }
   presentToast(msg) {
@@ -31,5 +31,6 @@ event: EventModel[] = null;
     });
 
     toast.present();
-  }}
+  }
+}
 

@@ -33,21 +33,21 @@ export class UserProvider {
     return this.afd.list('/users/${uid}/chats');
 
   }
-  getMessageUserInInbx(){
-     return this.getUid().then(uid => {
+  getMessageUserInInbx() {
+    return this.getUid().then(uid => {
       return this.afd.object(`users/${uid}/chats`);
     });
   }
   getIncomingChats() {
-   var uid = "jXylgYaLEVh1663eGm5U8TfS9gF2";
-   var interlocutor ='jXylgYaLEVh1663eGm5U8TfS9gF2';
+    var uid = "jXylgYaLEVh1663eGm5U8TfS9gF2";
+    var interlocutor = 'jXylgYaLEVh1663eGm5U8TfS9gF2';
     this.afd.object(`users/${uid}/chats`, {
       preserveSnapshot: true,
     })
       .subscribe(snapshots => {
-               console.log("Here is a snapshot!!");
+        console.log("Here is a snapshot!!");
         snapshots.forEach(snapshot => {
-   
+
           console.log(snapshot.key, snapshot.val());
         });
       })

@@ -15,7 +15,7 @@ import { DonationModel } from '../mydonation/mydonationmodel';
 export class MyDonation {
   @Input()
   item;
-  status:boolean;
+  status: boolean;
   loading: any;
   data: any;
   selectedDonor: DonationModel;
@@ -50,9 +50,8 @@ export class MyDonation {
   conditionalChaining(value) {
     if (value.success) {
       this.donations = value.data;
-      if(value.data.approximate_value==1000)
-      {
-        this.status=true;
+      if (value.data.approximate_value == 1000) {
+        this.status = true;
       }
     } else {
       this.loading.dismiss();

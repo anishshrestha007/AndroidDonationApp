@@ -6,9 +6,9 @@ import { DonationService } from '../../providers/donation-service';
 import { MyDonation } from "./mydonation";
 import { AppSettings } from "../appsetting/AppSetting";
 @Component({
-  selector:'adddonation-modal',
+  selector: 'adddonation-modal',
   templateUrl: 'adddonationmodel.html'
-  
+
 })
 export class DonationAddModal {
   loading: any;
@@ -47,13 +47,12 @@ export class DonationAddModal {
   }
   getDonationType(): void {
     this.donationService
-      .loadComboData(AppSettings.api_endpoint+'DonationType/combo/page/0/page_size/0/sort_by')
+      .loadComboData(AppSettings.api_endpoint + 'DonationType/combo/page/0/page_size/0/sort_by')
       .then(this.conditionalChaining.bind(this));
   }
   getDonnarType(): void {
-    debugger;
     this.donationService
-      .loadComboData(AppSettings.api_endpoint+'Donor/combo/page/0/page_size/0/sort_by')
+      .loadComboData(AppSettings.api_endpoint + 'Donor/combo/page/0/page_size/0/sort_by')
       .then(this.assignDonnarType.bind(this));
   }
   assignDonnarType(value) {
