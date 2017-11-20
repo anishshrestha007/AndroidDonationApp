@@ -1,0 +1,26 @@
+mydonation-page{
+    .item
+    {
+          background-color:whitesmoke;
+    }
+    .row h2{
+    margin: 0px 10px 0px 0px;
+    color:black;
+    font-size: 18px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+    #btn-add-donation{
+        color: black;
+    }
+    ion-item-sliding{
+        min-height: 3rem;
+        max-height: 5rem;
+    }
+  ion-item-sliding img{
+         min-height: 2rem;
+         max-height: 3.5rem;
+         min-width: 2rem;
+         max-width: 3.5rem;
+  }
+
+}

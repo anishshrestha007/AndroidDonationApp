@@ -1,0 +1,90 @@
+  page-login {
+   .main-content {
+            background-image:url('../assets/login_background.jpg');
+            height: 100%;
+            width: 100%;
+             background-repeat: no-repeat;
+             
+        }
+
+        ion-segment {
+           margin: 150px 0px 10px 0px;
+           
+        }
+         ion-segment-button {
+            border-color: #01579B !important;
+            color: black !important;
+            border-radius: 3px;
+            height:40px !important;
+        }
+        ion-input{
+          height: 35px !important;
+          font-size: 20px !important;
+          //padding-bottom: 10px !important;
+          color:blue;          
+        }
+        #lblFloat{
+         padding-bottom: 5px;
+         color: grey;
+        }
+
+        .label{
+          font-size: 17px;
+        }
+        #lblOptionTxt{
+          text-align: center;
+          font-size: 17px;
+          padding: 5px 0px 5px 0px;
+        }
+        #btnLogin{
+          margin-top: 15px;
+          width: 100%;
+          height: 50px;
+          border: 1px solid white;
+          background-color: #4CAF50;
+          color: white;
+          font-size: 20px;
+        }
+        #btnLoginFb{
+          background-color: #3B5998;
+           color: white;
+          font-size: 20px;
+          width: 100%;
+          height: 50px;
+          border: 1px solid white;
+        }
+         #btnLoginGgl{
+          background-color: #dd4b39;
+           color: white;
+          font-size: 20px;
+          width: 100%;
+          height: 50px;
+          border: 1px solid white;
+        }
+        #lblRegHeader{
+          text-align: center;
+          margin: 10px 0px 10px 0px;  
+        }
+        #lblRegHeader #head{
+          margin: 5px 0px 5px 0px;          
+          font-size: 23px;
+          font-weight: bold;
+          color: #BF360C;
+        }
+        #lblRegHeader #subHead{
+          margin: 0px 0px 10px 0px;          
+          font-size: 18px;
+          color: grey;
+        }
+
+    
+        ion-item{
+           background-color:  white !important;
+           border-radius: 10px !important;
+           border: 1px solid #37474F !important;
+           margin-bottom: 3px !important;
+       }
+       .hr_line{
+         border: 1px solid grey;
+       }
+  }

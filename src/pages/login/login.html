@@ -1,0 +1,83 @@
+<ion-content padding class="main-content">
+
+  <ion-segment [(ngModel)]="category" color="primary">
+    <ion-segment-button value="login">
+      <ion-icon name="log-in"></ion-icon>&nbsp;
+      <label class="label">Login</label>
+    </ion-segment-button>
+
+    <ion-segment-button value="signup">
+      <ion-icon name="cloud-upload"></ion-icon>&nbsp;
+      <label class="label">Sign Up</label>
+    </ion-segment-button>
+  </ion-segment>
+
+
+  <div [ngSwitch]="category" class="body-content">
+    <div *ngSwitchCase="'login'">
+      <form (submit)="doLogin()">
+        <ion-item>
+          <ion-input [(ngModel)]="loginData.username" name="username" type="text" placeholder="username"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input [(ngModel)]="loginData.password" name="password" type="password" placeholder="password"></ion-input>
+        </ion-item>
+
+        <button ion-button outline type="submit" id="btnLogin"> 
+          Login Now   
+        </button>
+      </form>
+
+
+      <hr class="hr_line">
+      <div id="lblOptionTxt">
+        <label>Alternatively, you can also</label>
+      </div>
+
+      <button ion-button outline type="submit" id="btnLoginFb"> 
+         <ion-icon name="logo-facebook" ></ion-icon>&nbsp;  Login with Facebook 
+        </button>
+      <div id="lblOptionTxt">
+        <label>Or,</label>
+      </div>
+      <button ion-button outline type="submit" id="btnLoginGgl"> 
+         <ion-icon name="logo-google" ></ion-icon>&nbsp; Login with Google   
+        </button>
+    </div>
+    <ion-list *ngSwitchCase="'signup'">
+      <div id="lblRegHeader">
+        <label id="head">
+         CREATE YOUR FREE ACCOUNT
+         </label><br>
+        <label id="subHead">
+         And became next Danbahadur.
+         </label>
+      </div>
+      <form (submit)="createAccount()">
+        <ion-item>
+          <ion-input [(ngModel)]="regData.first_name" name="first_name" placeholder="Enter First Name" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input [(ngModel)]="regData.last_name" name="last_name" placeholder="Enter Last Name" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input [(ngModel)]="regData.email" name="email" placeholder="Enter Email" type="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input [(ngModel)]="regData.contact_number" name="contact_number" placeholder="Enter Contact Number" type="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input [(ngModel)]="regData.username" name="username" placeholder="Enter User Name" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input [(ngModel)]="regData.password" name="password" placeholder="Enter Password" type="password"></ion-input>
+        </ion-item>
+        <button ion-button outline type="submit" id="btnLogin"> 
+          Register Now 
+        </button>
+      </form>
+    </ion-list>
+
+
+  </div>
+</ion-content>

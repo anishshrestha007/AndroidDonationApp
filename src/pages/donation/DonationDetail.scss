@@ -1,0 +1,18 @@
+donationdetail-page{
+    .item-disabled
+    {
+           pointer-events: none;
+    }
+    .row h2{
+    margin: 0px 10px 0px 0px;
+    color:black;
+    font-size: 18px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .toolbar-background {
+    background-color: #80DEEA;
+}
+.fab {
+    contain: layout;
+}
+}

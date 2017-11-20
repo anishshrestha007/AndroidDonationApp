@@ -1,0 +1,26 @@
+
+<ion-content class="main-view">
+  <div class="overlay">
+  </div>
+        <ion-avatar item-right>
+          <img src="assets/safal.jpg">
+        </ion-avatar>
+  <div class="modal_content">
+    <form (submit)="sendMessage()" style="margin-top:30px;">
+      <ion-input [hidden]="1===1" [(ngModel)]="requestDonationData.receiver_id" name="receiver_id" type="text"></ion-input>
+      <ion-input [hidden]="1===1" [(ngModel)]="requestDonationData.donation_id" name="donation_id" type="text"></ion-input>
+    <ion-item>
+      <ion-input class="item-disabled" [(ngModel)]="requestDonationData.description" name="description" type="text"></ion-input>
+    </ion-item>
+      <ion-item>
+        <ion-textarea [(ngModel)]="message" name="message"  placeholder="Type a message" style="height:150px;"></ion-textarea>
+      </ion-item>
+      <button ion-button block type="submit">
+      Send Message
+    </button>
+    </form>
+          <button ion-button block color="secondary" (click)="onDismiss()">
+       close
+     </button>
+  </div>
+</ion-content>

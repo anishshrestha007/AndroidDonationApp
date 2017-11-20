@@ -1,0 +1,25 @@
+<ion-menu [content]="content" side="left">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+     <ion-item class="menu-header" style="padding-top:10px; height:25%;">
+      <ion-avatar item-left class="menu-avatar">
+          <img src="assets/safal.jpg"  style="height:80%;width:80px;">
+      </ion-avatar>
+      <h2>Safal Mahat</h2>
+    </ion-item>
+    <ion-list>
+      <button style="background-color:gray;" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+       <ion-icon name="md-arrow-round-forward" item-right></ion-icon>{{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

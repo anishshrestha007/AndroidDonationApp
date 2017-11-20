@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle color="header-color">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Donate Everyting</ion-title>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="pet" color="header-color">
+      <ion-segment-button value="Donation" color="primary">
+        <ion-icon ios="ios-basket" md="md-basket"></ion-icon>
+        <label> Donation</label>
+      </ion-segment-button>
+      <ion-segment-button value="Event">
+        <ion-icon ios="ios-hand" md="md-hand"></ion-icon>
+        <label> Event</label>
+      </ion-segment-button>
+      <ion-segment-button value="Volunters">
+        <ion-icon name="people"></ion-icon>
+        <label>Volunters</label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div [ngSwitch]="pet">
+    <ion-list *ngSwitchCase="'Donation'">
+      <ion-item *ngFor="let dnrs of donations" (click)="onSelect(dnrs)">
+        <ion-thumbnail item-start>
+          <img src="assets/donation.jpg">
+        </ion-thumbnail>
+        <h2>{{dnrs.description}}</h2>
+        <h2>{{dnrs.address}}</h2>
+        <!--<button small ion-button icon-left item-end color="secondary" (click)="onRequestClick()">
+            <ion-icon name="eye"></ion-icon>
+     </button>-->
+             <ion-avatar item-right>
+          <img src="assets/safal.jpg">
+        </ion-avatar>
+
+      </ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'Event'" >
+      <ion-item *ngFor="let event of events" (click)="onSelectEvent(event)">
+        <ion-row>
+          <ion-col col-5>
+            <h2>{{event.full_name}}</h2>
+          </ion-col>
+          <ion-col col-4>
+            <h2>{{event.organizer_name}}</h2>
+          </ion-col>
+          <ion-col col-3>
+            <h2>{{event.hosted_date}}</h2>
+          </ion-col>
+          <!--<ion-col col-5>
+       <button small ion-button icon-left item-end color="secondary" (click)="onSelectEvent(event)">
+            <ion-icon name="eye"></ion-icon>
+        view
+     </button>
+    </ion-col>-->
+        </ion-row>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'Volunters'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-duckling-1.jpg">
+        </ion-thumbnail>
+        <h2>Daffy</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-duckling-2.jpg">
+        </ion-thumbnail>
+        <h2>Huey</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-duckling-3.jpg">
+        </ion-thumbnail>
+        <h2>Dewey</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-duckling-4.jpg">
+        </ion-thumbnail>
+        <h2>Louie</h2>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>
+<ion-footer>
+  <ion-content>
+    <ion-fab center bottom>
+      <button ion-fab color="plus-sign"><ion-icon name="add"></ion-icon></button>
+      <ion-fab-list side="left">
+        <button ion-fab color="primary" (click)="openAddForm()"><b>D</b></button>
+      </ion-fab-list>
+      <ion-fab-list side="right">
+        <button ion-fab color="danger" (click)="openEventAddForm()"><b>E</b></button>
+      </ion-fab-list>
+    </ion-fab>
+  </ion-content>
+</ion-footer>
