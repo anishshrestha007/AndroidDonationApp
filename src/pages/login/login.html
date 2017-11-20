@@ -23,8 +23,8 @@
           <ion-input [(ngModel)]="loginData.password" name="password" type="password" placeholder="password"></ion-input>
         </ion-item>
 
-        <button ion-button outline type="submit" id="btnLogin"> 
-          Login Now   
+        <button ion-button outline type="submit" id="btnLogin">
+          Login Now
         </button>
       </form>
 
@@ -34,24 +34,25 @@
         <label>Alternatively, you can also</label>
       </div>
 
-      <button ion-button outline type="submit" id="btnLoginFb"> 
-         <ion-icon name="logo-facebook" ></ion-icon>&nbsp;  Login with Facebook 
-        </button>
+      <button ion-button outline type="submit" id="btnLoginFb">
+        <ion-icon name="logo-facebook"></ion-icon>&nbsp; Login with Facebook
+      </button>
       <div id="lblOptionTxt">
         <label>Or,</label>
       </div>
-      <button ion-button outline type="submit" id="btnLoginGgl"> 
-         <ion-icon name="logo-google" ></ion-icon>&nbsp; Login with Google   
-        </button>
+      <button ion-button outline type="submit" id="btnLoginGgl">
+        <ion-icon name="logo-google"></ion-icon>&nbsp; Login with Google
+      </button>
     </div>
     <ion-list *ngSwitchCase="'signup'">
       <div id="lblRegHeader">
         <label id="head">
-         CREATE YOUR FREE ACCOUNT
-         </label><br>
+          CREATE YOUR FREE ACCOUNT
+        </label>
+        <br>
         <label id="subHead">
-         And became next Danbahadur.
-         </label>
+          Come and Join with us in our huge donation community!!!
+        </label>
       </div>
       <form (submit)="createAccount()">
         <ion-item>
@@ -72,8 +73,8 @@
         <ion-item>
           <ion-input [(ngModel)]="regData.password" name="password" placeholder="Enter Password" type="password"></ion-input>
         </ion-item>
-        <button ion-button outline type="submit" id="btnLogin"> 
-          Register Now 
+        <button ion-button outline type="submit" id="btnLogin">
+          Register Now
         </button>
       </form>
     </ion-list>

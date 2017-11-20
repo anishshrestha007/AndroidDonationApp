@@ -1,6 +1,6 @@
   page-login {
    .main-content {
-            background-image:url('../assets/login_background.jpg');
+            background-image:url('../assets/vector_backgrounds_by_thealchemist77.jpg');
             height: 100%;
             width: 100%;
              background-repeat: no-repeat;
@@ -13,7 +13,7 @@
         }
          ion-segment-button {
             border-color: #01579B !important;
-            color: black !important;
+            color: rgb(67, 228, 18) !important;
             border-radius: 3px;
             height:40px !important;
         }
@@ -32,6 +32,7 @@
           font-size: 17px;
         }
         #lblOptionTxt{
+          color:rgb(67, 228, 18);   
           text-align: center;
           font-size: 17px;
           padding: 5px 0px 5px 0px;
@@ -69,12 +70,12 @@
           margin: 5px 0px 5px 0px;          
           font-size: 23px;
           font-weight: bold;
-          color: #BF360C;
+          color: rgb(45, 15, 80);
         }
         #lblRegHeader #subHead{
           margin: 0px 0px 10px 0px;          
           font-size: 18px;
-          color: grey;
+          color: rgb(8, 6, 44);
         }
 
     
